@@ -1,7 +1,5 @@
 package com.ermalferati.security.exception;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -18,8 +16,6 @@ import java.util.stream.Collectors;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
 public class MethodArgumentNotValidExceptionHandler {
-
-    private static final Logger logger = LoggerFactory.getLogger(MethodArgumentNotValidExceptionHandler.class);
 
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -45,7 +41,4 @@ public class MethodArgumentNotValidExceptionHandler {
         return methodArgumentNotValidError;
     }
 
-    private void logFieldErrors() {
-
-    }
 }
